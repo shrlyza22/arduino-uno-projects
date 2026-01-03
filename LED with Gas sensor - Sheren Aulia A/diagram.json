@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "Sheren Aulia",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -175.8, "left": 41.2, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 87, "left": 76.2, "attrs": {} },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": -189.3, "left": -146.6, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -157.2,
+      "left": 109.4,
+      "attrs": { "color": "purple" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -81.6,
+      "left": 105.05,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "gas1:GND", "bb1:tn.1", "black", [ "h0" ] ],
+    [ "gas1:VCC", "bb1:tp.1", "red", [ "h19.2", "v-29.7" ] ],
+    [ "bb1:tp.25", "uno:0", "magenta", [ "v0.3", "h59.2", "v259.2", "h-9.6" ] ],
+    [ "bb1:tn.25", "uno:GND.3", "#8f4814", [ "v-0.1", "h49.6", "v460.8", "h-19.2" ] ],
+    [ "gas1:AOUT", "uno:A0", "white", [ "h28.8", "v499.2", "h259.2" ] ],
+    [ "gas1:DOUT", "uno:1", "cyan", [ "h19.2", "v220.5", "h76.8" ] ],
+    [ "led1:C", "uno:GND.1", "blue", [ "v182.4", "h67.6", "v19.2" ] ],
+    [ "r1:2", "uno:8", "yellow", [ "h0", "v114", "h115.2" ] ],
+    [ "led1:A", "bb1:8t.b", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:7t.b", "", [ "$bb" ] ],
+    [ "r1:1", "bb1:8t.c", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:8b.g", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
